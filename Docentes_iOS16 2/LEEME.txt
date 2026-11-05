@@ -1,0 +1,51 @@
+# Gestión de Docentes – Aplicación iOS
+
+Aplicación móvil desarrollada con **SwiftUI** para administrar información básica del personal docente.
+
+## Funcionalidades
+
+- Registrar docentes con datos personales y profesionales.
+- Consultar la lista del personal registrado.
+- Buscar por nombre, especialidad o correo electrónico.
+- Editar la información de un registro existente.
+- Eliminar docentes desde el formulario o deslizando el elemento en la lista.
+- Guardar los datos localmente para que permanezcan al cerrar la aplicación.
+
+## Tecnologías utilizadas
+
+- Swift 5
+- SwiftUI
+- Codable para codificar y decodificar los registros.
+- UserDefaults para persistencia local.
+
+> Esta versión utiliza UserDefaults y Codable, no SwiftData, para mantener compatibilidad con iOS 16.
+
+## Requisitos
+
+- Xcode 14.2 o superior.
+- iOS 16.0 o superior (deployment target configurado en el proyecto).
+- Un simulador de iPhone o dispositivo iOS compatible.
+
+## Cómo ejecutar el proyecto
+
+1. Descomprime el archivo ZIP.
+2. Abre `Docentes.xcodeproj` con Xcode.
+3. Selecciona un simulador compatible con iOS 16 o superior.
+4. Ejecuta **Product > Build** (o `Cmd + B`) para compilar.
+5. Inicia la aplicación con `Cmd + R`.
+6. Prueba el registro, búsqueda, edición y eliminación de docentes.
+
+## Organización del código
+
+- `DocentesApp.swift`: punto de entrada de la aplicación y configuración del almacén compartido.
+- `ContentView.swift`: listado, búsqueda y acceso a las acciones de docentes.
+- `TeacherFormView.swift`: formulario para crear, modificar y eliminar registros.
+- `Teacher.swift`: modelo de datos y lógica de almacenamiento local.
+
+## Almacenamiento
+
+Los registros se serializan con `JSONEncoder` y se recuperan con `JSONDecoder`. La información queda guardada en `UserDefaults` del dispositivo o simulador. No se requiere conexión a internet ni una base de datos externa.
+
+## Nota
+
+El proyecto está configurado para compilar en simulador sin firma de código. La compilación y ejecución final deben verificarse desde Xcode en macOS.
